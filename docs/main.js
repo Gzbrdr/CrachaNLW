@@ -4,7 +4,6 @@ const linksSocialMedia = {
   instagram: 'gabrielzbardini',
   twitter: 'gzbrdr'
 }
-
 function changeSocialMediaLinks() {
   for (let li of socialLinks.children) {
     const social = li.getAttribute('class')

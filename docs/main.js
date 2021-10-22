@@ -5,10 +5,11 @@ const linksSocialMedia = {
   twitter: 'gzbrdr'
 }
 function changeSocialMediaLinks() {
-  for (let li of socialLinks.children) {
-    const social = li.getAttribute('class')
-
-    li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+  for (let a of socialLinks.children) {
+    const li = a.children[0]
+    const parentLink = li.parentNode
+    const socialKey = li.getAttribute('class')
+    parentLink.href = `https://${socialKey}.com/${linksSocialMedia[socialKey]}`
   }
 }
 changeSocialMediaLinks()

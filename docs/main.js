@@ -5,11 +5,11 @@ const linksSocialMedia = {
   twitter: 'gzbrdr'
 }
 function changeSocialMediaLinks() {
-  for (let a of socialLinks.children) {
-    const li = a.children[0]
-    const parentLink = li.parentNode
-    const socialKey = li.getAttribute('class')
-    parentLink.href = `https://${socialKey}.com/${linksSocialMedia[socialKey]}`
+  for (let li of socialLinks.children) {
+    const social = li.getAttribute('class')
+    console.log(li.children)
+
+    li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
   }
 }
 changeSocialMediaLinks()
@@ -25,7 +25,6 @@ function getGitHubProfileInfos() {
       userLink.href = data.html_url
       userLogin.textContent = data.login
       userImage.src = data.avatar_url
-      userImage.alt = `Foto de ${data.name}`
     })
 }
 getGitHubProfileInfos()

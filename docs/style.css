@@ -171,7 +171,7 @@ main::before {
 #hexa3 {
   top: -100vh;
   height: 271.9%;
-  z-index: 3;
+  z-index: 4;
   height: 250%;
   align-self: flex-end;
   justify-self: flex-end;
@@ -182,6 +182,7 @@ main::before {
   animation-delay: 0.4s;
 }
 #hexa3Cube {
+  position: absolute;
   z-index: 4;
   width: 100%;
   height: 100%;
@@ -259,7 +260,7 @@ main::before {
 }
 #hexa6 {
   top: -100vh;
-  z-index: 1;
+  z-index: 4;
   align-self: flex-end;
   justify-self: center;
   grid-column-start: 4;
@@ -271,7 +272,8 @@ main::before {
   animation-delay: 1s;
 }
 #hexa6Cube {
-  z-index: 2;
+  position: absolute;
+  z-index: 6;
   width: 100%;
   height: 100%;
   align-self: flex-end;
@@ -286,10 +288,6 @@ main::before {
     #8257e5 18.39%,
     rgba(255, 0, 142, 0) 84.08%
   );
-}
-.cubes:hover {
-  opacity: 0.2;
-  filter: brightness(10);
 }
 
 .container {

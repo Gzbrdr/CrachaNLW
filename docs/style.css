@@ -16,18 +16,24 @@ body {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background: rgb(0, 0, 0) no-repeat center/cover;
+  background: linear-gradient(to right, #090015, #0b0010) no-repeat center/cover;
+}
+#semibody {
+  width: 100%;
+  height: 100%;
+  transform: scaleY(1);
 }
 .hexaFly {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20vw;
+  width: 20%;
   height: 18vw;
   background: #202024;
+  opacity: 0.2;
   clip-path: polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%);
-  animation: flyColumn 5s linear infinite;
+  animation: flyColumn 120s linear infinite;
 }
 .hexaFly::before {
   content: '';
@@ -51,8 +57,8 @@ main::after {
   content: '';
   position: absolute;
   width: 10%;
-  height: 60%;
-  top: calc(-50% - 100vh);
+  height: 60vh;
+  top: calc(-55vh - 100vh);
   background: linear-gradient(0deg, #ff3636, #ffcd1e);
   animation: goDown 2s ease-in-out reverse forwards;
 }
@@ -63,7 +69,7 @@ main::before {
   align-self: flex-end;
   width: 15%;
   height: 1%;
-  top: calc(9.7% - 100vh);
+  top: calc(4.9vh - 100vh);
   background: black;
   animation: goDown 2s ease-in-out reverse forwards;
 }
@@ -308,6 +314,7 @@ main::before {
   height: 0;
 }
 .avatar span > img {
+  display: block;
   z-index: 10;
   width: 20%;
   height: 100%;
@@ -363,8 +370,8 @@ li {
   align-items: center;
   justify-content: center;
   background-color: #323238;
-  width: 4em;
-  height: 3.5em;
+  width: 3.5em;
+  height: 3em;
   clip-path: polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%);
   transition: background-color 0.05s;
 }
@@ -372,8 +379,8 @@ li:hover {
   background-color: #414140;
 }
 #youtube {
-  height: 4em;
-  width: 3.5em;
+  height: 3.5em;
+  width: 3em;
   clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 }
 .socials {
@@ -385,56 +392,56 @@ li:hover {
 }
 @media only screen and (max-width: 899px) {
   main {
-    width: 50vw;
-    height: 100vw;
+    width: 50vh;
+    height: 100vh;
   }
   body {
-    font-size: 2vw;
+    font-size: 2.5vh;
   }
 }
 @media only screen and (min-width: 900px) {
   main {
-    width: 10rem;
-    height: 20rem;
+    width: 30vh;
+    height: 60vh;
   }
   body {
-    font-size: 8px;
+    font-size: 1.8vh;
   }
 }
 @media only screen and (min-width: 1200px) {
   main {
-    width: 15rem;
-    height: 30rem;
+    width: 30vh;
+    height: 60vh;
   }
   body {
-    font-size: 12px;
+    font-size: 1.8vh;
   }
 }
 @media only screen and (min-width: 1800px) {
   main {
-    width: 21rem;
-    height: 42rem;
+    width: 30vh;
+    height: 60vh;
   }
   body {
-    font-size: 18px;
+    font-size: 1.8vh;
   }
 }
 @media only screen and (min-width: 2500px) {
   main {
-    width: 30rem;
-    height: 60rem;
+    width: 30vh;
+    height: 60vh;
   }
   body {
-    font-size: 24px;
+    font-size: 1.8vh;
   }
 }
 @media only screen and (min-width: 4000px) {
   main {
-    width: 50rem;
-    height: 100rem;
+    width: 30vh;
+    height: 60vh;
   }
   body {
-    font-size: 36px;
+    font-size: 1.8vh;
   }
 }
 @keyframes goDown {
@@ -460,22 +467,36 @@ li:hover {
   0% {
     right: 0vw;
     left: 80vw;
-    top: 30vh;
+    top: 30%;
     transform: rotate(0deg);
   }
+  12.5% {
+    top: -30%;
+  }
   25% {
-    top: -30vh;
+    top: 30%;
+  }
+  37.5% {
+    top: 90%;
   }
   50% {
-    top: 30vh;
-  }
-  75% {
-    top: 90vh;
-  }
-  100% {
-    top: 30vh;
-    transform: rotate(180deg);
     left: 0vw;
     right: 40vw;
+    top: 30%;
+  }
+  62.5% {
+    top: -30%;
+  }
+  75% {
+    top: 30%;
+  }
+  87.5% {
+    top: 90%;
+  }
+  100% {
+    right: 0vw;
+    left: 80vw;
+    top: 30%;
+    transform: rotate(360deg);
   }
 }

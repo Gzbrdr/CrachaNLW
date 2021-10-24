@@ -18,8 +18,26 @@ body {
   height: 100vh;
   background: rgb(0, 0, 0) no-repeat center/cover;
 }
+.hexaFly {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  height: 18vw;
+  background: #202024;
+  clip-path: polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%);
+  animation: flyColumn 5s linear infinite;
+}
+.hexaFly::before {
+  content: '';
+  width: 95%;
+  height: 95%;
+  background: rgba(5, 2, 0, 0.9);
+  clip-path: polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%);
+}
 main {
-  position: relative;
+  position: absolute;
   padding: 0px;
   display: flex;
   justify-content: center;
@@ -27,6 +45,27 @@ main {
   width: 22.4rem;
   height: 43.5rem;
   color: var(--gray);
+}
+main::after {
+  z-index: 9;
+  content: '';
+  position: absolute;
+  width: 10%;
+  height: 60%;
+  top: calc(-50% - 100vh);
+  background: linear-gradient(0deg, #ff3636, #ffcd1e);
+  animation: goDown 2s ease-in-out reverse forwards;
+}
+main::before {
+  z-index: 9;
+  content: '';
+  position: absolute;
+  align-self: flex-end;
+  width: 15%;
+  height: 1%;
+  top: calc(9.7% - 100vh);
+  background: black;
+  animation: goDown 2s ease-in-out reverse forwards;
 }
 .vector {
   overflow: hidden;
@@ -137,7 +176,7 @@ main {
   animation-delay: 0.4s;
 }
 #hexa3Cube {
-  z-index: 5;
+  z-index: 4;
   width: 100%;
   height: 100%;
   align-self: flex-end;
@@ -183,7 +222,7 @@ main {
 }
 #hexa5 {
   top: -100vh;
-  z-index: 2;
+  z-index: 3;
   position: relative;
   align-self: center;
   justify-self: flex-end;
@@ -242,17 +281,22 @@ main {
     rgba(255, 0, 142, 0) 84.08%
   );
 }
+.cubes:hover {
+  opacity: 0.2;
+  filter: brightness(10);
+}
 
 .container {
+  z-index: 9;
   text-align: center;
   margin-top: 46%;
   height: 54%;
   width: 100%;
+  animation: opacity 0.2s linear reverse forwards;
 }
 .avatar {
   display: flex;
   justify-content: center;
-  z-index: 9;
   position: relative;
   width: 100%;
   height: 49%;
@@ -341,14 +385,23 @@ li:hover {
 }
 @media only screen and (max-width: 899px) {
   main {
-    width: 100vw;
-    height: 100vh;
+    width: 50vw;
+    height: 100vw;
   }
   body {
-    font-size: 16px;
+    font-size: 2vw;
   }
 }
 @media only screen and (min-width: 900px) {
+  main {
+    width: 10rem;
+    height: 20rem;
+  }
+  body {
+    font-size: 8px;
+  }
+}
+@media only screen and (min-width: 1200px) {
   main {
     width: 15rem;
     height: 30rem;
@@ -357,31 +410,31 @@ li:hover {
     font-size: 12px;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1800px) {
   main {
     width: 21rem;
     height: 42rem;
   }
   body {
-    font-size: 20px;
-  }
-}
-@media only screen and (min-width: 1800px) {
-  main {
-    width: 31.5rem;
-    height: 63rem;
-  }
-  body {
-    font-size: 32px;
+    font-size: 18px;
   }
 }
 @media only screen and (min-width: 2500px) {
   main {
-    width: 55rem;
-    height: 110rem;
+    width: 30rem;
+    height: 60rem;
   }
   body {
-    font-size: 50px;
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 4000px) {
+  main {
+    width: 50rem;
+    height: 100rem;
+  }
+  body {
+    font-size: 36px;
   }
 }
 @keyframes goDown {
@@ -393,5 +446,36 @@ li:hover {
   }
   100% {
     transform: translateY(-130vh);
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes flyColumn {
+  0% {
+    right: 0vw;
+    left: 80vw;
+    top: 30vh;
+    transform: rotate(0deg);
+  }
+  25% {
+    top: -30vh;
+  }
+  50% {
+    top: 30vh;
+  }
+  75% {
+    top: 90vh;
+  }
+  100% {
+    top: 30vh;
+    transform: rotate(180deg);
+    left: 0vw;
+    right: 40vw;
   }
 }

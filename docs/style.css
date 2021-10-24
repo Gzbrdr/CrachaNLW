@@ -58,7 +58,7 @@ main::after {
   position: absolute;
   width: 10%;
   height: 60vh;
-  top: calc(-55vh - 100vh);
+  top: calc(-55vh - 100vh + 0.1em);
   background: linear-gradient(0deg, #ff3636, #ffcd1e);
   animation: goDown 2s ease-in-out reverse forwards;
 }
@@ -69,7 +69,7 @@ main::before {
   align-self: flex-end;
   width: 15%;
   height: 1%;
-  top: calc(4.9vh - 100vh);
+  top: calc(-95.3vh - -0.1em);
   background: black;
   animation: goDown 2s ease-in-out reverse forwards;
 }
@@ -82,6 +82,33 @@ main::before {
   position: absolute;
   width: 100%;
   height: 50%;
+}
+.vector::after {
+  position: absolute;
+  content: '';
+  margin: 0 20vh 10vh 0;
+  width: 15vh;
+  height: 10vh;
+  border-radius: 34% 66% 14% 86% / 20% 58% 42% 80%;
+  box-shadow: #ff0011 0 0 4em 2em;
+  opacity: 0;
+  filter: opacity(0.6);
+  animation: opacity 0.5s linear reverse forwards;
+  animation-delay: 2s;
+}
+.vector::before {
+  position: absolute;
+  content: '';
+  margin: 0 0 10vh 20vh;
+  width: 15vh;
+  height: 10vh;
+  border-radius: 34% 66% 14% 86% / 20% 58% 42% 80%;
+  box-shadow: #ffbf00 0 0 4em 2em;
+  opacity: 0;
+  filter: opacity(0.6);
+  transform: scaleX(-1);
+  animation: opacity 0.5s linear reverse forwards;
+  animation-delay: 2s;
 }
 .hexaArea {
   width: 100%;
@@ -296,6 +323,7 @@ main::before {
   margin-top: 46%;
   height: 54%;
   width: 100%;
+  opacity: 0;
   animation: opacity 0.2s linear reverse forwards;
 }
 .avatar {
@@ -394,7 +422,7 @@ li:hover {
     height: 100vh;
   }
   body {
-    font-size: 2.5vh;
+    font-size: 3vh;
   }
 }
 @media only screen and (min-width: 900px) {

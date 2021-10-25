@@ -424,6 +424,12 @@ li:hover {
   body {
     font-size: 3vh;
   }
+  main::after {
+    opacity: 0;
+  }
+  main::before {
+    opacity: 0;
+  }
 }
 @media only screen and (min-width: 900px) {
   main {
